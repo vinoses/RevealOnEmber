@@ -12,7 +12,9 @@ module.exports = {
     'plugin:ember/recommended'
   ],
   env: {
-    browser: true
+    browser: true,
+    amd: true,
+    node: true
   },
   rules: {
   },
@@ -34,7 +36,8 @@ module.exports = {
       },
       env: {
         browser: false,
-        node: true
+        node: true,
+        amd: true
       },
       plugins: ['node'],
       rules: Object.assign({}, require('eslint-plugin-node').configs.recommended.rules, {

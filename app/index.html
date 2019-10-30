@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Testied</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Testied</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{content-for "head"}}
+  {{content-for "head"}}
 
-    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
-    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/testied.css">
+  <link type="text/css" integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+  <link type="text/css" integrity="" rel="stylesheet" href="{{rootURL}}assets/testied.css">
+  <link type="text/css" integrity="" rel="stylesheet" href="{{rootURL}}assets/css/reset.css">
+  <link type="text/css" integrity="" rel="stylesheet" href="{{rootURL}}assets/css/reveal.css">
+  <link type="text/css" integrity="" rel="stylesheet" href="{{rootURL}}assets/css/theme/black.css">
 
-    {{content-for "head-footer"}}
-  </head>
-  <body>
-    {{content-for "body"}}
+  {{content-for "head-footer"}}
+</head>
+<body>
+{{content-for "body"}}
 
-    <script src="{{rootURL}}assets/vendor.js"></script>
-    <script src="{{rootURL}}assets/testied.js"></script>
+<script src="{{rootURL}}assets/vendor.js"></script>
+<script src="{{rootURL}}assets/testied.js"></script>
+<script src="{{rootURL}}assets/js/reveal.js"></script>
 
-    {{content-for "body-footer"}}
-  </body>
+<div class="reveal"><div id="slides" class="slides">
+
+</div></div>
+
+<script>
+  // More info about config & dependencies:
+  // - https://github.com/hakimel/reveal.js#configuration
+  // - https://github.com/hakimel/reveal.js#dependencies
+  Reveal.initialize({
+    dependencies: [
+      { src: '{{rootURL}}assets/plugin/markdown/marked.js' },
+      { src: '{{rootURL}}assets/plugin/markdown/markdown.js' },
+    ]
+  });
+</script>
+{{content-for "body-footer"}}
+</body>
 </html>
